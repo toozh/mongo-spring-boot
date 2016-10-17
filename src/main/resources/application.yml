@@ -1,0 +1,18 @@
+spring:
+#  mvc:
+#    view:
+#      prefix: /page/
+#      suffix: .html
+  thymeleaf:
+#    prefix: classpath:/page/
+#    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    content-type: text/html
+  data:
+    mongodb:
+      uri: mongodb://192.168.1.222:27017/business
+#logging:
+#  level:
+#    org.springframework: DEBUG

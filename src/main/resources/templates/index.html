@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script th:src="@{../static/jquery-2.2.1.js}"></script>
+</head>
+<body>
+    <span th:text="${user.name}"></span>
+
+    <script th:inline="javascript">
+        var name = [[${user.name}]];
+//        $.post("/boot",{id:3, name:"sksk"}, function(result){
+//            console.log(result);
+//        });
+        $.ajax({
+            url: "/boot",
+            type: "post",
+            data: JSON.stringify({
+                id: 4,
+                name: "哈哈"
+            }),
+            contentType: "application/json",
+            success: function(result) {
+                console.log(result);
+            }
+        });
+    </script>
+
+</body>
+</html>
