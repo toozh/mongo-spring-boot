@@ -4,8 +4,8 @@ spring:
 #      prefix: /page/
 #      suffix: .html
   thymeleaf:
-#    prefix: classpath:/page/
-#    suffix: .html
+    prefix: classpath:/page/
+    suffix: .html
     mode: HTML5
     encoding: UTF-8
     cache: false
@@ -13,6 +13,17 @@ spring:
   data:
     mongodb:
       uri: mongodb://192.168.1.222:27017/business
-#logging:
-#  level:
-#    org.springframework: DEBUG
+  redis:
+    host: 192.168.1.222
+    password:
+    port: 6379
+    pool:
+      max-active: 32
+      max-idle: 16
+      min-idle: 1
+      max-wait: 1
+
+logging:
+  config: classpath:logback.xml
+  path: /logs/
+  level: DEBUG
